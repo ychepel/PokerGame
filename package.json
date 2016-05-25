@@ -1,0 +1,10 @@
+{
+  "name": "poker",
+  "version": "1.0.0",
+  "description": "poker game",
+  "author": "ychepel",
+  "dependencies": {
+    "angular": "^1.5.5",
+    "gulp": "^3.9.1"
+  }
+}
