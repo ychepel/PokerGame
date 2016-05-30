@@ -1,5 +1,6 @@
 package com.univer.controller;
 
+import com.univer.entity.User;
 import com.univer.service.HighScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -31,5 +32,19 @@ public class IndexController {
     @RequestMapping("/play")
     public String play() {
         return "play";
+    }
+
+    @RequestMapping(value = "/signup")
+    public ModelAndView signup() {
+        ModelAndView modelAndView = new ModelAndView("signup");
+        modelAndView.addObject("signupForm", new User());
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/login")
+    public ModelAndView signin() {
+        ModelAndView modelAndView = new ModelAndView("login");
+        return modelAndView;
     }
 }

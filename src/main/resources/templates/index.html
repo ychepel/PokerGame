@@ -1,17 +1,24 @@
 <!DOCTYPE html>
-<html data-ng-app="" xmlns:th="http://www.thymeleaf.org">
+<html ng-app="pokerApp" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Poker Game</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script type="application/javascript" src="js/angular.min.js"></script>
+    <script type="application/javascript" src="js/main.js"></script>
     <link href="css/all.css" rel="stylesheet" />
 </head>
-<body>
+<body ng-controller="mainController as bc">
 <div th:replace="fragments/header :: header">Header</div>
 <div id="content" class="content">
     Hello gamer!<br />
-    <input ng-model="hello" />
-    {{hello}}
+    <div ng-controller="secondController">
+        <input ng-model="bc.hello" />
+        {{bc.hello}}
+        <br />
+        <button ng-click="bc.louder()">Click me</button>
+    </div>
+    <br />
+    <login-form></login-form>
 </div>
 <div th:replace="fragments/footer :: footer">Footer</div>
 </body>
