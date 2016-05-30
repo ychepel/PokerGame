@@ -4,15 +4,22 @@
     <title>Poker Game</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script type="application/javascript" src="js/angular.min.js"></script>
+    <script src="http://code.jquery.com/jquery-2.1.4.js"></script>
     <link href="css/all.css" rel="stylesheet" />
 </head>
+
 <body>
-<div th:replace="fragments/header :: header">Header</div>
-<div id="content" class="content">
-    Hello gamer!<br />
-    <input ng-model="hello" />
-    {{hello}}
+<div id="table" class="table"></div>
+
+<div class="players">
+    <div id ="player1" class="hand">
+        <h3>Player 1</h3>
+    </div>
+    <div id ="player2" class="hand">
+        <h3>Player 2</h3>
+    </div>
 </div>
-<div th:replace="fragments/footer :: footer">Footer</div>
+
+<script src="js/script.js"></script>
 </body>
 </html>

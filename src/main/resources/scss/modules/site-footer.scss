@@ -1,0 +1,10 @@
+$COLOR_FOOTER: #5575AF;
+$COLOR_FOOTER_FOREGROUND: #FFED13;
+
+.site-footer {
+  background-color: $COLOR_FOOTER;
+  color: $COLOR_FOOTER_FOREGROUND;
+
+  margin-top: 30px;
+  padding: 15px;
+}

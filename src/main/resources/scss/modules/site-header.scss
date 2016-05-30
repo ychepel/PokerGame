@@ -1,0 +1,28 @@
+.site-header {
+  padding: 5px;
+}
+
+.main-menu {
+  list-style: none;
+}
+
+.main-menu-item {
+  background-color: #d9d9d9;
+  border: 1px solid #BBBBBB;
+  box-shadow: 1px 1px 1px #FFFFFF inset;
+  float: left;
+  padding: 10px;
+  margin: 0 5px;
+  width: 125px;
+}
+
+.main-menu-item:hover {
+  background-color: #ececec;
+}
+
+.main-menu-link {
+  color: #20771E;
+  text-shadow: 0 1px #E6F1E5;
+  font-weight: bold;
+  text-decoration: none;
+}
