@@ -1,0 +1,1 @@
+var pokerApp = angular.module('pokerApp', []);
