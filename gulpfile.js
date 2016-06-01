@@ -10,8 +10,8 @@ var gulp = require("gulp"),//http://gulpjs.com/
 
 var cssTarget = "src/main/resources/static/css/",
     jsTarget = "src/main/resources/static/js/",
-    sassFiles = "src/main/resources/scss/**/*.scss",
-    jsFiles = "src/main/resources/js/*.js";
+    sassFiles = "src/main/resources/src/scss/**/*.scss",
+    jsFiles = "src/main/resources/src/js/*.js";
 
 gulp.task("default", ["sass", "copy-angular-lib", "compress-js"]);
 
@@ -33,14 +33,16 @@ gulp.task("watch", function () {
 });
 
 gulp.task('copy-angular-lib', function () {
-    log('Copy AngularJs lib');
+    log('Copy AngularJs libs');
     gulp.src('node_modules/angular/angular.min.js')
+        .pipe(gulp.dest(jsTarget))
+    gulp.src('node_modules/angular-route/angular-route.min.js')
         .pipe(gulp.dest(jsTarget))
 });
 
-
 gulp.task('compress-js', function () {
     log('Compessing JavaSript files');
+    //gulp.src(['src/**/module.js', 'src/**/*.js'])
     gulp.src(jsFiles)
         .pipe(concat('all.js'))
         .pipe(gulp.dest(jsTarget))

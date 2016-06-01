@@ -1,0 +1,23 @@
+var pokerApp = angular.module('pokerApp', ['ngRoute']);
+
+pokerApp.config(function Config($routeProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+
+    $routeProvider.
+        when('/home', {
+            template: '<home></home>'
+        }).
+        when('/login', {
+            template: '<login-form></login-form>'
+        }).
+        when('/signup', {
+            template: '<signup-form></signup-form>'
+        }).
+        when('/highscores', {
+            template: '<highscores></highscores>'
+        }).
+        when('/playgame', {
+            template: '<play-game></play-game>'
+        }).
+        otherwise('/home');
+});

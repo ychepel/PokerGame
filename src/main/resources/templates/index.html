@@ -4,14 +4,15 @@
     <title>Poker Game</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <script type="application/javascript" src="js/angular.min.js"></script>
+    <script type="application/javascript" src="js/angular-route.min.js"></script>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script type="application/javascript" src="js/all.js"></script>
     <link href="css/all.css" rel="stylesheet" />
+    <base href="/">
 </head>
-<body ng-controller="mainController as bc">
+<body>
 <div th:replace="fragments/header :: header">Header</div>
 <div id="content" class="content">
-    Hello Guest!<br />
     <!--<div ng-controller="secondController">-->
         <!--<input ng-model="bc.hello" />-->
         <!--{{bc.hello}}-->
@@ -19,15 +20,8 @@
         <!--<button ng-click="bc.louder()">Click me</button>-->
     <!--</div>-->
     <!--<br />-->
-    <test-block />
-    <hr />
-    <signup-form />
-    <hr />
-    <login-form />
-    <hr />
-    <highscore />
-    <hr />
-    <play-game />
+    <!--<test-block />-->
+    <ng-view></ng-view>
 </div>
 <div th:replace="fragments/footer :: footer">Footer</div>
 </body>
