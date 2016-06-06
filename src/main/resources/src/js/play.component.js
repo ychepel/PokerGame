@@ -1,3 +1,5 @@
 pokerApp.component('playGame', {
-    templateUrl: 'fragments/play.html'
+    templateUrl: 'fragments/play.html',
+    controller: function () {
+    }
 })

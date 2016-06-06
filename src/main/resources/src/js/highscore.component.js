@@ -3,7 +3,7 @@ pokerApp.component('highscores', {
     controller: function ($http) {
         var vm = this;
 
-        $http.get('/highscores').
+        $http.get('/highscore-table').
             then(function (response) {
                 vm.highScores = response.data;
             });

@@ -10,14 +10,14 @@ var gulp = require("gulp"),//http://gulpjs.com/
 
 var cssTarget = "src/main/resources/static/css/",
     jsTarget = "src/main/resources/static/js/",
-    sassFiles = "src/main/resources/src/scss/**/*.scss",
-    jsFiles = "src/main/resources/src/js/*.js";
+    sassFiles = "src/main/resources/src/scss/",
+    jsFiles = "src/main/resources/src/js/";
 
 gulp.task("default", ["sass", "copy-angular-lib", "compress-js"]);
 
 gulp.task("sass", function () {
     log("Generating CSS files " + (new Date()).toString());
-    gulp.src("src/main/resources/scss/all.scss")
+    gulp.src(sassFiles + "all.scss")
         .pipe(sass({style: 'expanded'}))
         .pipe(autoprefixer("last 3 version", "safari 5", "ie 9"))
         .pipe(gulp.dest(cssTarget))
@@ -27,8 +27,9 @@ gulp.task("sass", function () {
 });
 
 gulp.task("watch", function () {
+    gulp.start("default");
     log("Watching scss and js files for modifications");
-    gulp.watch(sassFiles, ["sass"]);
+    gulp.watch(sassFiles + "**/*.scss", ["sass"]);
     gulp.watch(jsFiles, ["compress-js"]);
 });
 
@@ -42,8 +43,7 @@ gulp.task('copy-angular-lib', function () {
 
 gulp.task('compress-js', function () {
     log('Compessing JavaSript files');
-    //gulp.src(['src/**/module.js', 'src/**/*.js'])
-    gulp.src(jsFiles)
+    gulp.src([jsFiles + "**/module.js", jsFiles + "**/*.js"])
         .pipe(concat('all.js'))
         .pipe(gulp.dest(jsTarget))
         .pipe(rename('all.min.js'))

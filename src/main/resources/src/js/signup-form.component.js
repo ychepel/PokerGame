@@ -1,3 +1,5 @@
 pokerApp.component('signupForm', {
-    templateUrl: 'fragments/signup.html'
+    templateUrl: 'fragments/signup.html',
+    controller: function () {
+    }
 })

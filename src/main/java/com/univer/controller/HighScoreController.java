@@ -19,7 +19,7 @@ public class HighScoreController {
         this.highScoreService = highScoreService;
     }
 
-    @RequestMapping("/highscores")
+    @RequestMapping("/highscore-table")
     public List<HighScoreRecord> highscores() {
         return highScoreService.getRank();
     }
