@@ -6,6 +6,7 @@ var gulp = require("gulp"),//http://gulpjs.com/
     rename = require('gulp-rename'),//https://www.npmjs.org/package/gulp-rename
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
+    babel = require("gulp-babel"),
     log = util.log;
 
 var cssTarget = "src/main/resources/static/css/",
@@ -30,7 +31,7 @@ gulp.task("watch", function () {
     gulp.start("default");
     log("Watching scss and js files for modifications");
     gulp.watch(sassFiles + "**/*.scss", ["sass"]);
-    gulp.watch(jsFiles, ["compress-js"]);
+    gulp.watch(jsFiles + "**/*.js", ["compress-js"]);
 });
 
 gulp.task('copy-angular-lib', function () {
@@ -45,6 +46,7 @@ gulp.task('compress-js', function () {
     log('Compessing JavaSript files');
     gulp.src([jsFiles + "**/module.js", jsFiles + "**/*.js"])
         .pipe(concat('all.js'))
+        .pipe(babel())
         .pipe(gulp.dest(jsTarget))
         .pipe(rename('all.min.js'))
         .pipe(uglify())

@@ -1,11 +1,10 @@
 pokerApp.component('highscores', {
     templateUrl: 'fragments/highscores.html',
-    controller: function ($http) {
-        var vm = this;
+    controller: function (highscoreService) {
+        const vm = this;
 
-        $http.get('/highscore-table').
-            then(function (response) {
-                vm.highScores = response.data;
-            });
+        highscoreService.getScore().then(function(data) {
+            vm.highScores = data;
+        })
     }
 });
