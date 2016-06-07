@@ -4,6 +4,9 @@ pokerApp.config(function Config($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
 
     $routeProvider.
+        when('/', {
+            template: '<home></home>'
+        }).
         when('/home', {
             template: '<home></home>'
         }).
@@ -19,5 +22,7 @@ pokerApp.config(function Config($routeProvider, $locationProvider) {
         when('/playgame', {
             template: '<play-game></play-game>'
         }).
-        otherwise('/home');
+        otherwise({
+            templateUrl: 'fragments/404.html'
+        });
 });

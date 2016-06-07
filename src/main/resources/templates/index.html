@@ -11,7 +11,7 @@
     <base href="/">
 </head>
 <body>
-<div th:replace="fragments/header :: header">Header</div>
+<page-header />
 <div id="content" class="content">
     <!--<div ng-controller="secondController">-->
         <!--<input ng-model="bc.hello" />-->
@@ -23,6 +23,6 @@
     <!--<test-block />-->
     <ng-view></ng-view>
 </div>
-<div th:replace="fragments/footer :: footer">Footer</div>
+<page-footer />
 </body>
 </html>

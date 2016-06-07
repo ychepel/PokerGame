@@ -44,7 +44,7 @@ gulp.task('copy-angular-lib', function () {
 
 gulp.task('compress-js', function () {
     log('Compessing JavaSript files');
-    gulp.src([jsFiles + "**/module.js", jsFiles + "**/*.js"])
+    gulp.src([jsFiles + "**/*module.js", jsFiles + "**/*.js"])
         .pipe(concat('all.js'))
         .pipe(babel())
         .pipe(gulp.dest(jsTarget))
