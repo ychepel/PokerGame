@@ -10,16 +10,35 @@ public class HighScoreService {
 
     public List<HighScoreRecord> getRank() {
         List<HighScoreRecord> scores = new LinkedList<HighScoreRecord>();
-        scores.add(new HighScoreRecord(1, "Ivan Petrov", getRandomScore(), new GregorianCalendar(2016, 5, 30)));
-        scores.add(new HighScoreRecord(2, "Sergey Kozlov", getRandomScore(), new GregorianCalendar(2016, 4, 29)));
-        scores.add(new HighScoreRecord(3, "Arkadiy Raykin", getRandomScore(), new GregorianCalendar(2016, 4, 10)));
-        scores.add(new HighScoreRecord(4, "Anatoliy Kashpirovsky", getRandomScore(), new GregorianCalendar(2016, 5, 15)));
-        scores.add(new HighScoreRecord(5, "Olha Pupkina", getRandomScore(), new GregorianCalendar(2016, 4, 15)));
+        scores.add(new HighScoreRecord(0, "Ivan Petrov", getRandomScore(), new GregorianCalendar(2016, 5, 30)));
+        scores.add(new HighScoreRecord(0, "Sergey Kozlov", getRandomScore(), new GregorianCalendar(2016, 4, 29)));
+        scores.add(new HighScoreRecord(0, "Arkadiy Raykin", getRandomScore(), new GregorianCalendar(2016, 4, 10)));
+        scores.add(new HighScoreRecord(0, "Anatoliy Kashpirovsky", getRandomScore(), new GregorianCalendar(2016, 5, 15)));
+        scores.add(new HighScoreRecord(0, "Olha Pupkina", getRandomScore(), new GregorianCalendar(2016, 4, 15)));
+
+        sortScores(scores);
+        addRank(scores);
 
         return scores;
     }
 
     private int getRandomScore() {
         return (int) (Math.random()*10000);
+    }
+
+    private void sortScores(List<HighScoreRecord> scores) {
+        Collections.sort(scores, new Comparator<HighScoreRecord>() {
+            @Override
+            public int compare(HighScoreRecord r1, HighScoreRecord r2) {
+                return r2.getScore() - r1.getScore();
+            }
+        });
+    }
+
+    private void addRank(List<HighScoreRecord> scores) {
+        int i = 1;
+        for(HighScoreRecord record : scores) {
+            record.setRank(i++);
+        }
     }
 }
