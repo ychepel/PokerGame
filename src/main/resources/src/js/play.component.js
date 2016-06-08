@@ -47,4 +47,4 @@ pokerApp.component('playGame', {
         }, 2500);
 
     }
-})
+});

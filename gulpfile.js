@@ -7,6 +7,7 @@ var gulp = require("gulp"),//http://gulpjs.com/
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     babel = require("gulp-babel"),
+    eslint = require('gulp-eslint'),
     log = util.log;
 
 var cssTarget = "src/main/resources/static/css/",
@@ -51,4 +52,16 @@ gulp.task('compress-js', function () {
         .pipe(rename('all.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest(jsTarget));
+});
+
+gulp.task('lint', function () {
+    return gulp.src(jsFiles + "**/*.js")
+        .pipe(eslint({
+            'rules':{
+                'quotes': [1, 'single'],
+                'semi': [1, 'always'],
+            }
+        }))
+        .pipe(eslint.format())
+        .pipe(eslint.failOnError());
 });
