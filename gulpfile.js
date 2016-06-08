@@ -39,7 +39,11 @@ gulp.task('copy-angular-lib', function () {
     log('Copy AngularJs libs');
     gulp.src('node_modules/angular/angular.min.js')
         .pipe(gulp.dest(jsTarget))
+    gulp.src('node_modules/angular/angular.js')
+        .pipe(gulp.dest(jsTarget))
     gulp.src('node_modules/angular-route/angular-route.min.js')
+        .pipe(gulp.dest(jsTarget))
+    gulp.src('node_modules/angular-cookies/angular-cookies.min.js')
         .pipe(gulp.dest(jsTarget))
 });
 
