@@ -1,4 +1,4 @@
-var pokerApp = angular.module('pokerApp', ['ngRoute']);
+const pokerApp = angular.module('pokerApp', ['ngRoute']);
 
 pokerApp.config(function Config($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);

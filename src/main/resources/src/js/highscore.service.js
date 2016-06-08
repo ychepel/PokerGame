@@ -7,12 +7,17 @@ pokerApp.factory('highscoreService', function ($http, $q) {
     };
 
     function getScore() {
+        let promise;
         if (!results) {
-            return $http.get('/highscore-table')
-                .then(response => response.data);
+            promise = $http.get('/highscore-table')
+                .then(function (response) {
+                    results = response.data;
+                    return response.data;
+                });
         } else {
-            $q (resolve => resolve(results));
+            promise = $q.when(results);
         }
+        return promise;
     }
 });
 
