@@ -6,5 +6,5 @@ pokerApp.filter('humaniseScore', function() {
         return 'thousands';
     } else {
         return 'dozen thousands';
-    }}
+    }};
 });
