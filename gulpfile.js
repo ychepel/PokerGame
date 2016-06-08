@@ -15,7 +15,7 @@ var cssTarget = "src/main/resources/static/css/",
     sassFiles = "src/main/resources/src/scss/",
     jsFiles = "src/main/resources/src/js/";
 
-gulp.task("default", ["sass", "copy-angular-lib", "compress-js"]);
+gulp.task("default", ["sass", "copy-angular-lib", "lint", "compress-js"]);
 
 gulp.task("sass", function () {
     log("Generating CSS files " + (new Date()).toString());
@@ -57,6 +57,9 @@ gulp.task('compress-js', function () {
 gulp.task('lint', function () {
     return gulp.src(jsFiles + "**/*.js")
         .pipe(eslint({
+            'env': {
+                'es6': true
+            },
             'rules':{
                 'quotes': [1, 'single'],
                 'semi': [1, 'always'],

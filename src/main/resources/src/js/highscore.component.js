@@ -5,6 +5,6 @@ pokerApp.component('highscores', {
 
         highscoreService.getScore().then(function(data) {
             vm.highScores = data;
-        })
+        });
     }
 });
