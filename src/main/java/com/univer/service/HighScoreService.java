@@ -23,7 +23,7 @@ public class HighScoreService {
     }
 
     private int getRandomScore() {
-        return (int) (Math.random()*10000);
+        return (int) (Math.random()*100000);
     }
 
     private void sortScores(List<HighScoreRecord> scores) {

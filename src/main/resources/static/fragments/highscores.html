@@ -11,7 +11,7 @@
         <tr ng-repeat="highScore in $ctrl.highScores">
             <td>{{highScore.rank}}</td>
             <td>{{highScore.name}}</td>
-            <td>{{highScore.score}}</td>
+            <td>{{highScore.score | humaniseScore}}</td>
             <td>{{highScore.date | date:'dd-MM-yyyy'}}</td>
         </tr>
     </tbody>

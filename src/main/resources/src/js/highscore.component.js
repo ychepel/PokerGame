@@ -1,6 +1,6 @@
 pokerApp.component('highscores', {
     templateUrl: 'fragments/highscores.html',
-    controller: function (highscoreService) {
+    controller: function(highscoreService) {
         const vm = this;
 
         highscoreService.getScore().then(function(data) {
