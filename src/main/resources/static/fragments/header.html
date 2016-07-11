@@ -10,14 +10,14 @@
             <li class="main-menu-item">
                 <a class="main-menu-link" href="/highscores">high scores</a>
             </li>
-            <li class="main-menu-item">
+            <li class="main-menu-item" ng-if="$ctrl.showlogin">
                 <a class="main-menu-link" href="/login">log in</a>
             </li>
             <li class="main-menu-item">
                 <a class="main-menu-link" href="/signup">sign up</a>
             </li>
-            <li class="main-menu-item">
-                <a class="main-menu-link" href="#">log out</a>
+            <li class="main-menu-item" ng-if="$ctrl.showlogout">
+                <a class="main-menu-link" ng-click="$ctrl.logout">log out</a>
             </li>
         </ul>
     </nav>

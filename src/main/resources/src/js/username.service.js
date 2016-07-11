@@ -1,14 +1,16 @@
-pokerApp.factory('usernameService', function ($cookies) {
+pokerApp.factory('usernameService', function () {
+
+    let username = 'John Smith';
 
     return {
-        getName
+        getName, logOut
     };
 
     function getName() {
-        if (!$cookies.get('username')) {
-            return 'Guest';
-        } else {
-            return $cookies.get('username');
-        }
+        return username;
+    }
+
+    function logOut() {
+        username = '';
     }
 });

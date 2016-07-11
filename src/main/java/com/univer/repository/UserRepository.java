@@ -1,7 +1,6 @@
 package com.univer.repository;
 
 import com.univer.entity.User;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
