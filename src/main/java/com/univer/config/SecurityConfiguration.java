@@ -26,17 +26,17 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests().antMatchers("/").permitAll();
-//        http.csrf().disable();
     }
 
-    private Filter csrfHeaderFilter() {
+    @Bean
+    public Filter csrfHeaderFilter() {
         return new OncePerRequestFilter() {
             @Override
             protected void doFilterInternal(HttpServletRequest request,
-                                            HttpServletResponse response, FilterChain filterChain)
+                                            HttpServletResponse response,
+                                            FilterChain filterChain)
                     throws ServletException, IOException {
-                CsrfToken csrf = (CsrfToken) request.getAttribute(CsrfToken.class
-                        .getName());
+                CsrfToken csrf = (CsrfToken) request.getAttribute(CsrfToken.class.getName());
                 if (csrf != null) {
                     Cookie cookie = new Cookie("XSRF-TOKEN", csrf.getToken());
                     cookie.setPath("/");
