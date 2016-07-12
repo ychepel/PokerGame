@@ -1,16 +1,21 @@
 pokerApp.component('pageHeader', {
     templateUrl: 'fragments/header.html',
     controller: function(usernameService) {
-        if(usernameService.getName()) {
-            this.showlogin = false;
-            this.showlogout = true;
-        } else {
-            this.showlogin = true;
-            this.showlogout = false;
+        const vm = this;
+
+        function showLoginLogout(value1, value2) {
+            vm.showlogin = value1;
+            vm.showlogout = value2;
         }
 
-        this.logout = function(usernameService) {
-            console.log('we are here');
+        if(usernameService.getName()) {
+            showLoginLogout(false, true);
+        } else {
+            showLoginLogout(true, false);
+        }
+
+        this.logout = function() {
+            showLoginLogout(true, false);
             usernameService.logOut();
         }
     }
