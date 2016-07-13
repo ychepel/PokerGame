@@ -22,6 +22,9 @@ pokerApp.config(function Config($routeProvider, $locationProvider) {
         when('/playgame', {
             template: '<play-game></play-game>'
         }).
+        when('/show-users', {
+            template: '<show-users></show-users>'
+        }).
         otherwise({
             templateUrl: 'fragments/404.html'
         });

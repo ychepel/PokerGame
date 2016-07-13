@@ -1,5 +1,6 @@
 package com.univer.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -12,6 +13,7 @@ import java.beans.Transient;
 @Getter
 @Setter
 @ToString
+@AllArgsConstructor
 public class User {
 
     @Size(min = 3, max = 20)

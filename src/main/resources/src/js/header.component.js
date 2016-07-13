@@ -17,6 +17,6 @@ pokerApp.component('pageHeader', {
         this.logout = function() {
             showLoginLogout(true, false);
             usernameService.logOut();
-        }
+        };
     }
 });
