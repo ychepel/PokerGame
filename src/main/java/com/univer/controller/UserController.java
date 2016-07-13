@@ -1,8 +1,6 @@
 package com.univer.controller;
 
-import com.univer.entity.HighScoreRecord;
 import com.univer.entity.User;
-import com.univer.service.HighScoreService;
 import com.univer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

@@ -18,10 +18,5 @@ public class SignUpController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public void register(@RequestBody RegistrationModel model) {
-        User user = new User();
-        user.setEmail(model.getEmail());
-        user.setName(model.getName());
-        user.setInputPassword(model.getPassword());
-        userService.save(user);
     }
 }

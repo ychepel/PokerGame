@@ -1,6 +1,6 @@
 pokerApp.component('pageHeader', {
     templateUrl: 'fragments/header.html',
-    controller: function(usernameService) {
+    controller: function(userService) {
         const vm = this;
 
         function showLoginLogout(value1, value2) {
@@ -8,7 +8,7 @@ pokerApp.component('pageHeader', {
             vm.showlogout = value2;
         }
 
-        if(usernameService.getName()) {
+        if(userService.getName()) {
             showLoginLogout(false, true);
         } else {
             showLoginLogout(true, false);
@@ -16,7 +16,7 @@ pokerApp.component('pageHeader', {
 
         this.logout = function() {
             showLoginLogout(true, false);
-            usernameService.logOut();
+            userService.logOut();
         };
     }
 });

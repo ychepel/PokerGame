@@ -1,8 +1,8 @@
 pokerApp.component('home', {
     templateUrl: 'fragments/home.html',
-    controller: function(usernameService) {
-        if(usernameService.getName()) {
-            this.username = usernameService.getName();
+    controller: function(userService) {
+        if(userService.getName()) {
+            this.username = userService.getName();
         }
         else {
             this.username = 'Guest';
