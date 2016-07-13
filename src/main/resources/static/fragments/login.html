@@ -1,16 +1,16 @@
-<form class="form-narrow form-horizontal" action="#" method="post">
+<form class="form-narrow form-horizontal" method="post">
     <fieldset>
         <legend>Please Sign In</legend>
         <div class="form-group">
-            <label for="inputName" class="col-lg-2 control-label">Email</label>
+            <label for="inputName" class="col-lg-2 control-label">Name</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="inputName" placeholder="Name" name="inputName" />
+                <input type="text" class="form-control" id="inputName" placeholder="Name" name="inputName" ng-model="user.name"/>
             </div>
         </div>
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Password</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="inputPassword" />
+                <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="inputPassword" ng-model="user.password"/>
             </div>
         </div>
         <div class="form-group">
@@ -24,7 +24,7 @@
         </div>
         <div class="form-group">
             <div class="col-lg-offset-2 col-lg-10">
-                <button type="submit" class="btn btn-default">Sign in</button>
+                <button type="submit" class="btn btn-default" ng-click="$ctrl.logIn(user)">Log in</button>
             </div>
         </div>
         <div class="form-group">

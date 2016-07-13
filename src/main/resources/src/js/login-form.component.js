@@ -1,5 +1,8 @@
 pokerApp.component('loginForm', {
     templateUrl: 'fragments/login.html',
-    controller: function () {
+    controller: function (userService) {
+        this.logIn = function(user) {
+            userService.logIn(user);
+        };
     }
 });
